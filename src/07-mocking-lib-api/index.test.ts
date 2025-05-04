@@ -26,7 +26,9 @@ describe('throttledGetDataFromApi', () => {
   test('should create instance with provided base url', async () => {
     await throttledGetDataFromApi('todos/1');
 
-    expect(createSpy).toHaveBeenCalledWith({ baseURL: 'https://jsonplaceholder.typicode.com' });
+    expect(createSpy).toHaveBeenCalledWith({
+      baseURL: 'https://jsonplaceholder.typicode.com',
+    });
   });
 
   test('should perform request to correct provided url', async () => {
@@ -41,8 +43,8 @@ describe('throttledGetDataFromApi', () => {
     expect(result).toStrictEqual({
       userId: 1,
       id: 1,
-      title: "delectus aut autem",
-      completed: false
+      title: 'delectus aut autem',
+      completed: false,
     });
   });
 });
